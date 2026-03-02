@@ -1,5 +1,6 @@
 package br.gov.caixa.api.investimentos.api.investimentos.resource;
 
+
 import br.gov.caixa.api.investimentos.api.investimentos.dto.simulacao.SimulacaoDTO;
 import br.gov.caixa.api.investimentos.api.investimentos.dto.simulacao.SimulacaoHistoricoResponseDTO;
 import br.gov.caixa.api.investimentos.api.investimentos.dto.simulacao.SimulacaoResponseDTO;
@@ -13,11 +14,12 @@ import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 
-@Path("/simulacoes")
+
+@Path("/secure/simulacoes")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @RolesAllowed("user")
-public class SimulacaoResource {
+public class SecureSimulacaoResource {
 
     @Inject
     SimulacaoService simulacaoService;
@@ -30,9 +32,7 @@ public class SimulacaoResource {
 
     @GET
     public List<SimulacaoHistoricoResponseDTO> historico(@QueryParam("clienteId") Long clienteId) {
-        if (clienteId == null) {
-            throw new BadRequestException("clienteId é obrigatório.");
-        }
+        if (clienteId == null) throw new BadRequestException("clienteId é obrigatório.");
         return simulacaoService.historico(clienteId);
     }
 }

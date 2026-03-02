@@ -19,7 +19,7 @@ CREATE TABLE simulacoes (
     prazo_meses INTEGER NOT NULL,
     rentabilidade_aplicada NUMERIC NOT NULL,
     valor_final NUMERIC NOT NULL,
-    data_simulacao TEXT NOT NULL
+    data_simulacao INTEGER NOT NULL
 );
 
 CREATE INDEX IF NOT EXISTS idx_simulacoes_cliente_data

@@ -16,7 +16,7 @@ import java.util.List;
 @Path("/simulacoes")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-@RolesAllowed("user")
+//@RolesAllowed("user")
 public class SimulacaoResource {
 
     @Inject

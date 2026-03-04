@@ -1,5 +1,5 @@
 package br.gov.caixa.api.investimentos.api.investimentos.domain.enums;
 
 public enum TipoProduto {
-    CDB, LCI, LCA
+    CDB, CDB_TURBO, LCI, LCA
 }

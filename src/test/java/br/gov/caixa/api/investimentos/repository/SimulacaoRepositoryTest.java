@@ -72,6 +72,8 @@ public class SimulacaoRepositoryTest {
     @TestTransaction
     void findByClienteId_deveFiltrarPorClienteId_eOrdenarPorDataDesc() {
 
+        simulacaoRepository.deleteAll();
+
         Long clienteId = 123L;
 
         Simulacao sMaisAntiga = criarSimulacao();

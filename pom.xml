@@ -98,6 +98,11 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-smallrye-jwt-build</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-jacoco</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -140,6 +145,11 @@
                             <rules>
                                 <rule>
                                     <element>BUNDLE</element>
+                                    <includes>
+                                        <include>**/service/**</include>
+                                        <include>**/resource/**</include>
+                                        <include>**/repository/**</include>
+                                    </includes>
                                     <limits>
                                         <limit>
                                             <counter>LINE</counter>
@@ -149,11 +159,7 @@
                                     </limits>
                                 </rule>
                             </rules>
-                            <excludes>
-                                <exclude>**/dto/**</exclude>
-                                <exclude>**/exception/**</exclude>
-                                <exclude>**/model/**</exclude>
-                            </excludes>
+
                         </configuration>
                     </execution>
                 </executions>
